@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Instant;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Api
 @RestController
@@ -78,7 +79,11 @@ public class WithdrawalController {
     public ResponseEntity findAll() {
         List<Withdrawal> withdrawals = context.getBean(WithdrawalRepository.class).findAll();
         List<WithdrawalScheduled> withdrawalsScheduled = context.getBean(WithdrawalScheduledRepository.class).findAll();
-        List<Object> result = new ArrayList<>();
+        //List<Object> result = new ArrayList<>();
+        //result.addAll(withdrawals);
+        //result.addAll(withdrawalsScheduled);
+
+        final Set<Object> result = new HashSet<>();
         result.addAll(withdrawals);
         result.addAll(withdrawalsScheduled);
 

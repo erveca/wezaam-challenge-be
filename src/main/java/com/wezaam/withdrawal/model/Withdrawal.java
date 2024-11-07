@@ -1,5 +1,7 @@
 package com.wezaam.withdrawal.model;
 
+import lombok.ToString;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -9,6 +11,7 @@ import java.time.Instant;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+@ToString
 @Entity(name = "withdrawals")
 public class Withdrawal {
 
@@ -22,6 +25,7 @@ public class Withdrawal {
     private Long paymentMethodId;
     @Enumerated(EnumType.STRING)
     private WithdrawalStatus status;
+    //private boolean notified;
 
     public Long getId() {
         return id;
@@ -78,4 +82,13 @@ public class Withdrawal {
     public Long getTransactionId() {
         return transactionId;
     }
+/*
+    public boolean isNotified() {
+        return notified;
+    }
+
+    public void setNotified(boolean notified) {
+        this.notified = notified;
+    }
+ */
 }
