@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "1f5c345c-8309-44f8-bb3d-a542cfa33f5a",
+		"name": "Weezam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30810575"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7070/find-all-users",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"find-all-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7070/find-user-by-id/1",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"find-user-by-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Withdrawals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7070/find-all-withdrawals",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"find-all-withdrawals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Withdrawal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "paymentMethodId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "23.45",
+							"type": "text"
+						},
+						{
+							"key": "executeAt",
+							"value": "ASAP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:7070/create-withdrawals",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"create-withdrawals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Withdrawal (MaxWithdrawalAmount exceeded)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "paymentMethodId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "123.45",
+							"type": "text"
+						},
+						{
+							"key": "executeAt",
+							"value": "ASAP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:7070/create-withdrawals",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"create-withdrawals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Scheduled Withdrawal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "userId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "paymentMethodId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "67.89",
+							"type": "text"
+						},
+						{
+							"key": "executeAt",
+							"value": "2024-11-07T22:00:00.000000Z",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:7070/create-withdrawals",
+					"host": [
+						"localhost"
+					],
+					"port": "7070",
+					"path": [
+						"create-withdrawals"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
